@@ -1,14 +1,12 @@
 package br.com.caelum.clines.api.users;
 
 import static java.util.stream.Collectors.toList;
-
 import java.util.List;
-
 import javax.validation.Valid;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import br.com.caelum.clines.api.aircraft.AircraftFormMapper;
+import br.com.caelum.clines.shared.domain.User;
 import br.com.caelum.clines.shared.exceptions.ResourceAlreadyExistsException;
 import br.com.caelum.clines.shared.exceptions.ResourceNotFoundException;
 import lombok.AllArgsConstructor;
@@ -16,7 +14,7 @@ import lombok.AllArgsConstructor;
 @Service
 @AllArgsConstructor
 public class UserService {
-
+	
 	private final UserRepository repository;
 	private final UserViewMapper viewMapper;
 	private final UserFormMapper formMapper;
